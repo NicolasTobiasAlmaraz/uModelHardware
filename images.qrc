@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/images"/>
+    <qresource prefix="/">
+        <file>images/LED_OFF.png</file>
+        <file>images/LED_ON.png</file>
+        <file>images/PULSADOR_OFF.png</file>
+        <file>images/PULSADOR_ON.png</file>
+        <file>images/RELAY_OFF.png</file>
+        <file>images/RELAY_ON.png</file>
+        <file>images/DISPLAY_0.png</file>
+        <file>images/DISPLAY_1.png</file>
+        <file>images/DISPLAY_2.png</file>
+        <file>images/DISPLAY_3.png</file>
+        <file>images/DISPLAY_4.png</file>
+        <file>images/DISPLAY_5.png</file>
+        <file>images/DISPLAY_6.png</file>
+        <file>images/DISPLAY_7.png</file>
+        <file>images/DISPLAY_8.png</file>
+        <file>images/DISPLAY_9.png</file>
+        <file>images/LLAVE_OFF.png</file>
+        <file>images/LLAVE_ON.png</file>
+    </qresource>
+</RCC>
