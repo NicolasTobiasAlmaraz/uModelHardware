@@ -1,10 +1,15 @@
 # uModelHardware
 ## Contexto
 ### UTN FRBA - Proyecto de Investigación y Desarrollo uModelFacotry
+### Autores
+- Almaraz Nicolás
+- Díaz Ángel
+- Ing. Gonazalez Nahuel
+
 ### Directores del proyecto
-- Giura Marcelo
-- Gonzalez Nahuel
-- Trujillo Marcelo
+- Ing. Giura Marcelo
+- Ing. Gonzalez Nahuel
+- Ing. Trujillo Marcelo
 
 ## Introducción
 En el presente repositorio se presenta uModelHardware. Esto consiste en una herramienta que te permite hacer uso de un PCB virtual. El modo de accionarlo es mediante un servidor Web Socket. La idea es que este último interactúe con otros clientes que pueden ser:
@@ -46,7 +51,3 @@ Ejemplo 3
 
 ### Ejemplo 4: Titulo
 Ejemplo 4
-
-## Autores
-- Almaraz Nicolás
-- Ángel Díaz
