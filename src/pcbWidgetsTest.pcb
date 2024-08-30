@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!-- File uModelHardware.xml-->
+<pcbWidgets>
+
+   <Relay id="1">
+      <InitState>0</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>BombaAgua</Nombre>
+	  <Descripcion>DescripcionRelay</Descripcion>
+   </Relay>
+
+   <Led id="2">      
+      <InitState>1</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>LuzEmergencia</Nombre>
+	  <Descripcion>DescripcionLed</Descripcion>
+   </Led>
+
+   <Pulsador id="3">
+      <InitState>0</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>BotonParada</Nombre>
+	  <Descripcion>DescripcionPulsador</Descripcion>
+   </Pulsador>
+	
+   <Led id="4">      
+      <InitState>0</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>LuzEmergencia</Nombre>
+	  <Descripcion>DescripcionLed</Descripcion>
+   </Led>
+   
+   <Llave id="5">      
+      <InitState>0</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>Mi Llave</Nombre>
+	  <Descripcion>DescripcionLlave</Descripcion>
+   </Llave>
+   
+   <Display id="6">      
+      <InitState>0</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>Dispaly Unidades</Nombre>
+	  <Descripcion>DescripcionDispaly</Descripcion>
+   </Display>
+   
+   <Display id="7">      
+      <InitState>7</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>Dispaly Decenas</Nombre>
+	  <Descripcion>DescripcionDispaly</Descripcion>
+   </Display>
+   
+   <Pulsador id="8">      
+      <InitState>7</InitState>
+      <PosX>0</PosX>
+      <PosY>0</PosY>
+      <Nombre>Dispaly Decenas</Nombre>
+	  <Descripcion>DescripcionDispaly</Descripcion>
+   </Pulsador>
+
+</pcbWidgets>

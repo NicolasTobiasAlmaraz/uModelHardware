@@ -17,10 +17,14 @@ public:
     ~Form();
 
     QListWidget *getListWidget();
+    QListWidget *getListWidget2();
+    QListWidget *getListWidget3();
 
 private:
     Ui::Form *ui;
     QListWidget *listWidget;
+    QListWidget *listWidget2;
+    QListWidget *listWidget3;
 };
 
 #endif // FORM_H

@@ -20,6 +20,9 @@ void MainWindow::on_actionAbrirUMF_triggered()
     QString path = QFileDialog::getOpenFileName(nullptr, "Abrir archivo UMF",  "", "Archivos UMF (*.umf)");
     m_umf = new UMFhandler(path);
     m_umf->Read();
+
+    addItemsListWidget2();
+
 }
 
 
@@ -42,9 +45,8 @@ void MainWindow::on_actionAbrirPCB_triggered()
 
     ui->actionDebug->setEnabled(m_pcb != nullptr);
     m_form = new Form();
-    QListWidget *listWidget = m_form->getListWidget();
 
-    listWidget->addItem("funciona!");
+    addItemsListWidget();
 
 }
 
@@ -61,4 +63,89 @@ void MainWindow::on_actionDebug_triggered()
 {
     m_form->show();
 }
+
+void MainWindow::addItemsListWidget(){
+    QListWidget *listWidget = m_form->getListWidget();
+
+    QVector<WidgetPCB_t> aux;
+    for(int i=0; i<m_pcb->widgetCount;i++){
+        switch(i){
+        case m_pcb->displays:
+            listWidget->addItem("Displays:");
+            aux = m_pcb->getListDisplays();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        case m_pcb->relays:
+            listWidget->addItem("Relays:");
+            aux = m_pcb->getListRelays();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        case m_pcb->leds:
+            listWidget->addItem("Leds:");
+            aux = m_pcb->getListLeds();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        case m_pcb->pulsador:
+            listWidget->addItem("Pulsador:");
+            aux = m_pcb->getListPulsadores();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        case m_pcb->llaves:
+            listWidget->addItem("Llaves:");
+            aux = m_pcb->getListLlaves();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        default:
+            break;
+        }
+    }
+    listWidget->addItem("funciona!");
+}
+
+void MainWindow::addItemsListWidget2(){
+    QListWidget *listWidget = m_form->getListWidget2();
+
+    QVector<UMF_t> aux;
+    for(int i=0; i<2;i++){
+        switch(i){
+        case 0:
+            listWidget->addItem("Acciones:");
+            aux = m_umf->getAcciones();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        case 1:
+            listWidget->addItem("Eventos:");
+            aux = m_umf->getEventos();
+            for(int j = 0; j<aux.length(); j++){
+                listWidget->addItem(aux[j].nombre);
+            }
+            break;
+        default:
+            break;
+        }
+    }
+    listWidget->addItem("funciona!");
+}
+
+
+
+
+
+
+
+
+
+
 

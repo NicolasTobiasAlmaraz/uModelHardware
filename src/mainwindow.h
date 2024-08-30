@@ -30,6 +30,10 @@ private slots:
 
     void on_actionDebug_triggered();
 
+    //Solo para debug
+    void addItemsListWidget();
+    void addItemsListWidget2();
+
 private:
     Ui::MainWindow *ui;
     Form *m_form;
