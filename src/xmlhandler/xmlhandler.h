@@ -17,7 +17,8 @@ struct WidgetPCB_t {
     QString descripcion;
     int posX;
     int posY;
-    int size; // alto y ancho
+    int ancho;
+    int alto;
 };
 
 struct UMF_t {

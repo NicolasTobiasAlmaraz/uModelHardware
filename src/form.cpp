@@ -9,6 +9,8 @@ Form::Form(QWidget *parent)
     listWidget = ui->listWidget;
     listWidget2 = ui->listWidget_2;
     listWidget3 = ui->listWidget_3;
+
+    connect(ui->pushButton, &QPushButton::clicked, this, &Form::buttonClicked);
 }
 
 Form::~Form()
@@ -27,3 +29,4 @@ QListWidget* Form::getListWidget2(){
 QListWidget* Form::getListWidget3(){
     return listWidget3;
 }
+

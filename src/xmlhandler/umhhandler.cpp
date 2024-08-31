@@ -34,10 +34,18 @@ void UMHhandler::Read(){
     }
 
     m_doc.clear();
-    m_doc.setContent(&f);
+    if (!m_doc.setContent(&f)) {  // Check if setContent is successful
+        f.close();
+        QMessageBox messageBox;
+        messageBox.critical(0, "Error", "El contenido XML no es válido");
+        delete this;
+        return;
+    }
     f.close();
 
     QDomElement root = m_doc.documentElement();
+    if(root.isNull())
+        return;
     QDomElement umh = root.firstChild().toElement();
 
     while(!umh.isNull()){

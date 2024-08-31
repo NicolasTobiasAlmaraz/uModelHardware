@@ -20,6 +20,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void EnableUi();
+
+        //Solo para debug
+    void addItemsListWidget();
+    void addItemsListWidget2();
+    void addItemsListWidget3();
+
 private slots:
 
     void on_actionAbrirUMF_triggered();
@@ -30,9 +37,16 @@ private slots:
 
     void on_actionDebug_triggered();
 
-    //Solo para debug
-    void addItemsListWidget();
-    void addItemsListWidget2();
+    void handleButtonClick();
+
+
+    void on_actionGuardarPCB_triggered();
+
+    void on_actionNuevoPCB_triggered();
+
+    void on_actionGuardar_triggered();
+
+    void on_actionNuevoProyectoUMH_triggered();
 
 private:
     Ui::MainWindow *ui;

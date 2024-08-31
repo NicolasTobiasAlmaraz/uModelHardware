@@ -4,10 +4,10 @@ PCBhandler::~PCBhandler() {}
 
 void PCBhandler::SetLed(WidgetPCB_t w, QDomElement root){
 
-    QDomElement parent,initState,posX,posY,nombre,descripcion,size;
+    QDomElement parent,initState,posX,posY,nombre,descripcion,ancho,alto;
 
     parent = m_doc.createElement("Led");
-    parent.setAttribute("id",CreateId());
+    parent.setAttribute("id",w.id);
 
 
     initState = m_doc.createElement("InitState");
@@ -30,19 +30,23 @@ void PCBhandler::SetLed(WidgetPCB_t w, QDomElement root){
     descripcion.appendChild(m_doc.createTextNode(w.descripcion));
     parent.appendChild(descripcion);
 
-    size = m_doc.createElement("Size");
-    size.appendChild(m_doc.createTextNode(QString::number(w.size)));
-    parent.appendChild(size);
+    ancho = m_doc.createElement("Ancho");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.ancho)));
+    parent.appendChild(ancho);
+
+    alto = m_doc.createElement("Alto");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.alto)));
+    parent.appendChild(alto);
 
     root.appendChild(parent);
 }
 
 void PCBhandler::SetRelay(WidgetPCB_t w, QDomElement root){
 
-    QDomElement parent,initState,posX,posY,nombre,descripcion,size;
+    QDomElement parent,initState,posX,posY,nombre,descripcion,ancho,alto;
 
-    parent = m_doc.createElement("Relays");
-    parent.setAttribute("id",CreateId());
+    parent = m_doc.createElement("Relay");
+    parent.setAttribute("id",w.id);
 
     initState = m_doc.createElement("InitState");
     initState.appendChild(m_doc.createTextNode("0"));
@@ -64,19 +68,23 @@ void PCBhandler::SetRelay(WidgetPCB_t w, QDomElement root){
     descripcion.appendChild(m_doc.createTextNode(w.descripcion));
     parent.appendChild(descripcion);
 
-    size = m_doc.createElement("Size");
-    size.appendChild(m_doc.createTextNode(QString::number(w.size)));
-    parent.appendChild(size);
+    ancho = m_doc.createElement("Ancho");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.ancho)));
+    parent.appendChild(ancho);
+
+    alto = m_doc.createElement("Alto");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.alto)));
+    parent.appendChild(alto);
 
     root.appendChild(parent);
 }
 
 void PCBhandler::SetPulsador(WidgetPCB_t w, QDomElement root){
 
-    QDomElement parent,initState,posX,posY,nombre,descripcion,size;
+    QDomElement parent,initState,posX,posY,nombre,descripcion,ancho,alto;
 
     parent = m_doc.createElement("Pulsador");
-    parent.setAttribute("id",CreateId());
+    parent.setAttribute("id",w.id);
 
     initState = m_doc.createElement("InitState");
     initState.appendChild(m_doc.createTextNode("0"));
@@ -98,19 +106,23 @@ void PCBhandler::SetPulsador(WidgetPCB_t w, QDomElement root){
     descripcion.appendChild(m_doc.createTextNode(w.descripcion));
     parent.appendChild(descripcion);
 
-    size = m_doc.createElement("Size");
-    size.appendChild(m_doc.createTextNode(QString::number(w.size)));
-    parent.appendChild(size);
+    ancho = m_doc.createElement("Ancho");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.ancho)));
+    parent.appendChild(ancho);
+
+    alto = m_doc.createElement("Alto");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.alto)));
+    parent.appendChild(alto);
 
     root.appendChild(parent);
 }
 
 void PCBhandler::SetLlaves(WidgetPCB_t w, QDomElement root){
 
-    QDomElement parent,initState,posX,posY,nombre,descripcion,size;
+    QDomElement parent,initState,posX,posY,nombre,descripcion,ancho,alto;
 
     parent = m_doc.createElement("Llave");
-    parent.setAttribute("id",CreateId());
+    parent.setAttribute("id",w.id);
 
     initState = m_doc.createElement("InitState");
     initState.appendChild(m_doc.createTextNode("0"));
@@ -132,19 +144,23 @@ void PCBhandler::SetLlaves(WidgetPCB_t w, QDomElement root){
     descripcion.appendChild(m_doc.createTextNode(w.descripcion));
     parent.appendChild(descripcion);
 
-    size = m_doc.createElement("Size");
-    size.appendChild(m_doc.createTextNode(QString::number(w.size)));
-    parent.appendChild(size);
+    ancho = m_doc.createElement("Ancho");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.ancho)));
+    parent.appendChild(ancho);
+
+    alto = m_doc.createElement("Alto");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.alto)));
+    parent.appendChild(alto);
 
     root.appendChild(parent);
 }
 
 void PCBhandler::SetDisplay(WidgetPCB_t w, QDomElement root){
 
-    QDomElement parent,initState,posX,posY,nombre,descripcion,size;
+    QDomElement parent,initState,posX,posY,nombre,descripcion,ancho,alto;
 
-    parent = m_doc.createElement("Relays");
-    parent.setAttribute("id",CreateId());
+    parent = m_doc.createElement("Display");
+    parent.setAttribute("id",w.id);
 
     initState = m_doc.createElement("InitState");
     initState.appendChild(m_doc.createTextNode("0"));
@@ -166,9 +182,13 @@ void PCBhandler::SetDisplay(WidgetPCB_t w, QDomElement root){
     descripcion.appendChild(m_doc.createTextNode(w.descripcion));
     parent.appendChild(descripcion);
 
-    size = m_doc.createElement("Size");
-    size.appendChild(m_doc.createTextNode(QString::number(w.size)));
-    parent.appendChild(size);
+    ancho = m_doc.createElement("Ancho");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.ancho)));
+    parent.appendChild(ancho);
+
+    alto = m_doc.createElement("Alto");
+    ancho.appendChild(m_doc.createTextNode(QString::number(w.alto)));
+    parent.appendChild(alto);
 
     root.appendChild(parent);
 }
@@ -176,12 +196,15 @@ void PCBhandler::SetDisplay(WidgetPCB_t w, QDomElement root){
 void PCBhandler::Write(){
 
     //creo raiz y lo añado al file
+    m_doc.clear();
+
     QDomElement root = m_doc.createElement("pcbWidgets");
     m_doc.appendChild(root);
 
+
+
     for(int w=0; w<widgets_t::widgetCount;w++){
         QVector<WidgetPCB_t> aux;
-        QDomElement parent,initState,posX,posY,nombre,descripcion;
         switch(w){
         case widgets_t::leds:
             aux = getListLeds();
@@ -212,7 +235,7 @@ void PCBhandler::Write(){
             aux.clear();
             break;
         case widgets_t::displays:
-            aux = getListRelays();
+            aux = getListDisplays();
             for(int i=0;i<aux.length();i++){
                 SetDisplay(aux[i], root);
             }
@@ -247,7 +270,7 @@ void PCBhandler::Read(){
         m_error = 1;
         return;
     }
-
+    m_doc.clear();
     // Proceso todo
     m_doc.setContent(&f);
     f.close();
@@ -288,6 +311,10 @@ void PCBhandler::Read(){
                 miWidget.posX=Child.firstChild().toText().data().toInt();
             if(Child.tagName()=="PosY")
                 miWidget.posY=Child.firstChild().toText().data().toInt();
+            if(Child.tagName()=="Ancho")
+                miWidget.ancho=Child.firstChild().toText().data().toInt();
+            if(Child.tagName()=="Alto")
+                miWidget.alto=Child.firstChild().toText().data().toInt();
             // Avanzo al siguiente tag
             Child = Child.nextSibling().toElement();
         }
@@ -337,4 +364,45 @@ bool PCBhandler::IdExists(QString s){
             return true;
     }
     return false;
+}
+
+void PCBhandler::AddWidget(int data,
+                        QString nombre,
+                        QString descripcion,
+                        int posX,
+                        int posY,
+                        int ancho,
+                        int alto,
+                        widgets_t type){
+    WidgetPCB_t w;
+
+    w.id = CreateId();
+    w.data = data;
+    w.nombre = nombre;
+    w.descripcion = descripcion;
+    w.posX = posX;
+    w.posY = posY;
+    w.ancho = ancho;
+    w.alto = alto;
+
+    switch(type){
+    case leds:
+        m_ListLeds.append(w);
+        break;
+    case displays:
+        m_ListDisplays.append(w);
+        break;
+    case pulsador:
+        m_ListPulsadores.append(w);
+        break;
+    case llaves:
+        m_ListLlaves.append(w);
+        break;
+    case relays:
+        m_ListRelays.append(w);
+        break;
+    default:
+        break;
+    }
+
 }

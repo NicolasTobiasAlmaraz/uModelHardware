@@ -31,6 +31,15 @@ public:
     QString CreateId();
     bool IdExists(QString s);
 
+    void AddWidget(int data,
+                    QString nombre,
+                    QString descripcion,
+                    int posX,
+                    int posY,
+                    int ancho,
+                    int alto,
+                    widgets_t type);
+
 private:
 
     QDomDocument m_doc;

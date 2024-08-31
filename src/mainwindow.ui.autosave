@@ -595,6 +595,9 @@
    </property>
   </action>
   <action name="actionAbrirPCB">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>PCB</string>
    </property>

@@ -20,11 +20,17 @@ public:
     QListWidget *getListWidget2();
     QListWidget *getListWidget3();
 
+signals:
+    void buttonClicked();
+
 private:
     Ui::Form *ui;
     QListWidget *listWidget;
     QListWidget *listWidget2;
     QListWidget *listWidget3;
+
+    int m_leds = 0;
+
 };
 
 #endif // FORM_H
