@@ -48,6 +48,8 @@ private slots:
 
     void on_actionNuevoProyectoUMH_triggered();
 
+    void on_actionGuardarProyectoUMH_triggered();
+
 private:
     Ui::MainWindow *ui;
     Form *m_form;

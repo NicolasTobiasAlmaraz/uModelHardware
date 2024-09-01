@@ -1,5 +1,10 @@
 src/build/
 *.pro
 *.user
+*.pro.user
 *.f926128
+*.pro.user.f926128
 *.txt
+src/*.pro
+src/*.user
+src/*.f926128

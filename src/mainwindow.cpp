@@ -32,7 +32,6 @@ void MainWindow::on_actionAbrirPCB_triggered()
     if(!path.isEmpty()){
         m_pcb = new PCBhandler(path);
         m_pcb->Read();
-        EnableUi();
         addItemsListWidget();
     }
 }
@@ -58,6 +57,7 @@ void MainWindow::on_actionDebug_triggered()
 void MainWindow::addItemsListWidget(){
     QListWidget *listWidget = m_form->getListWidget();
     listWidget->clear();
+    listWidget->addItem("Existe PCB");
     QVector<WidgetPCB_t> aux;
     for(int i=0; i<m_pcb->widgetCount;i++){
         switch(i){
@@ -105,7 +105,8 @@ void MainWindow::addItemsListWidget(){
 
 void MainWindow::addItemsListWidget2(){
     QListWidget *listWidget = m_form->getListWidget2();
-
+    listWidget->clear();
+    listWidget->addItem("Existe UMF");
     QVector<UMF_t> aux;
     for(int i=0; i<2;i++){
         switch(i){
@@ -131,7 +132,9 @@ void MainWindow::addItemsListWidget2(){
 }
 
 void MainWindow::addItemsListWidget3(){
-
+    QListWidget *listWidget = m_form->getListWidget3();
+    listWidget->clear();
+    listWidget->addItem("Existe UMH");
 }
 
 void MainWindow::handleButtonClick(){
@@ -144,19 +147,14 @@ void MainWindow::on_actionGuardarPCB_triggered()
 
 }
 
-
 void MainWindow::on_actionNuevoPCB_triggered()
 {
     QString path = QFileDialog::getSaveFileName(nullptr, "Crear archivo PCB",  "", "Archivos PCB (*.pcb)");
     if(!path.isEmpty()){
         m_pcb = new PCBhandler(path);
         m_pcb->Write();
-        EnableUi();
         addItemsListWidget();
     }
-
-
-
 }
 
 
@@ -170,7 +168,7 @@ void MainWindow::on_actionGuardar_triggered()
 }
 
 void MainWindow::EnableUi(){
-    bool enable = (m_pcb != nullptr||m_umh!=nullptr);
+    bool enable = (m_umh!=nullptr);
     ui->actionAbrirUMF->setEnabled(enable);
     ui->actionGuardarPCB->setEnabled(enable);
     ui->toolBar->setEnabled(enable);
@@ -180,9 +178,11 @@ void MainWindow::EnableUi(){
     ui->actionSimulaci_n->setEnabled(enable);
     ui->actionConfiguraci_n->setEnabled(enable);
     ui->actionGuardar->setEnabled(enable);
+    ui->actionAbrirPCB->setEnabled(enable);
+    ui->actionNuevoPCB->setEnabled(enable);
 
     ui->actionDebug->setEnabled(enable);
-    if (!m_form) {  // Only create new form if it doesn't exist
+    if (!m_form) {
         m_form = new Form();
         connect(m_form, &Form::buttonClicked, this, &MainWindow::handleButtonClick);
     }
@@ -197,5 +197,11 @@ void MainWindow::on_actionNuevoProyectoUMH_triggered()
         EnableUi();
         addItemsListWidget3();
     }
+}
+
+
+void MainWindow::on_actionGuardarProyectoUMH_triggered()
+{
+
 }
 
