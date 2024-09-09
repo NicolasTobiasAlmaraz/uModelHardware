@@ -69,13 +69,13 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_root">
          <attribute name="title">
           <string>Rooteo</string>
          </attribute>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>9</x>
@@ -106,10 +106,10 @@
                 <x>0</x>
                 <y>0</y>
                 <width>267</width>
-                <height>587</height>
+                <height>585</height>
                </rect>
               </property>
-              <widget class="QWidget" name="">
+              <widget class="QWidget" name="layoutWidget">
                <property name="geometry">
                 <rect>
                  <x>10</x>
@@ -218,7 +218,7 @@
          <attribute name="title">
           <string>Configuración</string>
          </attribute>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -267,7 +267,7 @@
                 <height>254</height>
                </rect>
               </property>
-              <widget class="QWidget" name="">
+              <widget class="QWidget" name="layoutWidget">
                <property name="geometry">
                 <rect>
                  <x>10</x>
@@ -423,76 +423,13 @@
           </layout>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_sim">
-         <attribute name="title">
-          <string>Simulación</string>
-         </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_serv">
-            <item>
-             <widget class="QLabel" name="label_12">
-              <property name="text">
-               <string>Servidor (?)</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_2"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_puerto">
-            <item>
-             <widget class="QLabel" name="label_13">
-              <property name="text">
-               <string>Número de Puerto</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_3"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_12">
-            <property name="text">
-             <string>Guardar Proyecto</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_7">
-            <property name="text">
-             <string>Iniciar Simulación</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_14">
-            <property name="text">
-             <string>Log de Intercambio</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTextEdit" name="textEdit"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="text">
-             <string>Exportar Log</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
        </widget>
       </item>
       <item>
        <widget class="QMdiArea" name="mdiArea">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="minimumSize">
          <size>
           <width>500</width>
@@ -524,7 +461,7 @@
      <x>0</x>
      <y>0</y>
      <width>1038</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -535,42 +472,56 @@
      <property name="title">
       <string>Nuevo</string>
      </property>
-     <addaction name="actionProyecto_UMH"/>
-     <addaction name="actionPCB"/>
+     <addaction name="actionNuevoPCB"/>
+     <addaction name="actionNuevo"/>
     </widget>
     <widget class="QMenu" name="menuGuardar">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="title">
       <string>Guardar Como</string>
      </property>
-     <addaction name="actionProyecto_UMH_2"/>
-     <addaction name="actionPCB_2"/>
+     <addaction name="actionGuardarProyectoUMH"/>
+     <addaction name="actionGuardarPCB"/>
     </widget>
     <widget class="QMenu" name="menuLimpiar">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="title">
       <string>Limpiar</string>
      </property>
-     <addaction name="actionPCB_3"/>
-     <addaction name="actionUMF"/>
+     <addaction name="actionLimpiarPCB"/>
+     <addaction name="actionLimpiarUMF"/>
     </widget>
     <widget class="QMenu" name="menuAbrir">
      <property name="title">
       <string>Abrir</string>
      </property>
-     <addaction name="actionProyecto_UMH_3"/>
-     <addaction name="actionPCB_4"/>
-     <addaction name="actionUMF_2"/>
+     <addaction name="actionAbrirPCB"/>
+     <addaction name="actionAbrirUMF"/>
+     <addaction name="actionAbrirProyectoUMH"/>
     </widget>
     <addaction name="menuNuevo"/>
     <addaction name="menuAbrir"/>
-    <addaction name="menuGuardar"/>
     <addaction name="separator"/>
     <addaction name="menuLimpiar"/>
+    <addaction name="separator"/>
+    <addaction name="menuGuardar"/>
+    <addaction name="actionGuardar"/>
+    <addaction name="separator"/>
+    <addaction name="actionVincular_PCB"/>
+    <addaction name="actionDesvincular_PCB"/>
+    <addaction name="actionVincular_UMF"/>
+    <addaction name="actionDesvincular_UMF"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
      <string>Ayuda</string>
     </property>
     <addaction name="actionInstrucciones"/>
+    <addaction name="actionDebug"/>
    </widget>
    <widget class="QMenu" name="menuPerspectiva">
     <property name="title">
@@ -585,32 +536,56 @@
    <addaction name="menuAyuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionProyecto_UMH">
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConfigurarServidorToolbar"/>
+   <addaction name="actionIniciarSimulacionToolbar"/>
+   <addaction name="actionDetener_Simulacion"/>
+   <addaction name="actionGuardarUMHToolbar"/>
+  </widget>
+  <action name="actionNuevoProyectoUMH">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Proyecto UMH</string>
    </property>
   </action>
-  <action name="actionPCB">
+  <action name="actionNuevoPCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>PCB</string>
    </property>
   </action>
-  <action name="actionProyecto_UMH_2">
+  <action name="actionGuardarProyectoUMH">
    <property name="text">
     <string>Proyecto UMH</string>
    </property>
   </action>
-  <action name="actionPCB_2">
+  <action name="actionGuardarPCB">
    <property name="text">
     <string>PCB</string>
    </property>
   </action>
-  <action name="actionPCB_3">
+  <action name="actionLimpiarPCB">
    <property name="text">
     <string>PCB</string>
    </property>
   </action>
-  <action name="actionUMF">
+  <action name="actionLimpiarUMF">
    <property name="text">
     <string>UMF</string>
    </property>
@@ -620,17 +595,26 @@
     <string>Abrir Proyecto UMH</string>
    </property>
   </action>
-  <action name="actionProyecto_UMH_3">
+  <action name="actionAbrirProyectoUMH">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Proyecto UMH</string>
    </property>
   </action>
-  <action name="actionPCB_4">
+  <action name="actionAbrirPCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>PCB</string>
    </property>
   </action>
-  <action name="actionUMF_2">
+  <action name="actionAbrirUMF">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>UMF</string>
    </property>
@@ -641,21 +625,148 @@
    </property>
   </action>
   <action name="actionRooteo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Rooteo</string>
    </property>
   </action>
   <action name="actionConfiguraci_n">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Configuración</string>
    </property>
   </action>
   <action name="actionSimulaci_n">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Simulación</string>
    </property>
   </action>
+  <action name="actionIniciarSimulacionToolbar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/images/play-button.png</normaloff>:/images/play-button.png</iconset>
+   </property>
+   <property name="text">
+    <string>Iniciar Simulacion</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionConfigurarServidorToolbar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/images/settings.png</normaloff>:/images/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configurar Servidor</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionGuardarUMHToolbar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/images/diskette.png</normaloff>:/images/diskette.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar UMH</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionDebug">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Debug</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Guardar Todo</string>
+   </property>
+   <property name="toolTip">
+    <string>Guardar Todo</string>
+   </property>
+  </action>
+  <action name="actionDetener_Simulacion">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/images/stop-button.png</normaloff>:/images/stop-button.png</iconset>
+   </property>
+   <property name="text">
+    <string>Detener Simulacion</string>
+   </property>
+   <property name="toolTip">
+    <string>Detener Simulacion</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionVincular_PCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Vincular PCB</string>
+   </property>
+  </action>
+  <action name="actionDesvincular_PCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Desvincular PCB</string>
+   </property>
+  </action>
+  <action name="actionVincular_UMF">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Vincular UMF</string>
+   </property>
+  </action>
+  <action name="actionDesvincular_UMF">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Desvincular UMF</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo...</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="rsc.qrc"/>
+ </resources>
  <connections/>
 </ui>

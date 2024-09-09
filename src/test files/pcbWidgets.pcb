@@ -1,0 +1,74 @@
+<pcbWidgets>
+ <Led id="2">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>LuzEmergencia</Nombre>
+  <Descripcion>DescripcionLed</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Led>
+ <Led id="4">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>LuzEmergencia</Nombre>
+  <Descripcion>DescripcionLed</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Led>
+ <Relay id="1">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>BombaAgua</Nombre>
+  <Descripcion>DescripcionRelay</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Relay>
+ <Pulsador id="3">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>BotonParada</Nombre>
+  <Descripcion>DescripcionPulsador</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Pulsador>
+ <Pulsador id="8">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Dispaly Decenas</Nombre>
+  <Descripcion>DescripcionDispaly</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Pulsador>
+ <Llave id="5">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Mi Llave</Nombre>
+  <Descripcion>DescripcionLlave</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Llave>
+ <Display id="6">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Dispaly Unidades</Nombre>
+  <Descripcion>DescripcionDispaly</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Display>
+ <Display id="7">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Dispaly Decenas</Nombre>
+  <Descripcion>DescripcionDispaly</Descripcion>
+  <Ancho>00</Ancho>
+  <Alto/>
+ </Display>
+</pcbWidgets>

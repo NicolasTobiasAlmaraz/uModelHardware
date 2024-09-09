@@ -1,0 +1,20 @@
+<pcbWidgets>
+ <Led id="20240901222953-250">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Led 1: PCB 1</Nombre>
+  <Descripcion>led de test</Descripcion>
+  <Ancho>101000</Ancho>
+  <Alto/>
+ </Led>
+ <Led id="20240901222956-311">
+  <InitState>0</InitState>
+  <PosX>0</PosX>
+  <PosY>0</PosY>
+  <Nombre>Led 2: PCB 1</Nombre>
+  <Descripcion>led de test 2</Descripcion>
+  <Ancho>101000</Ancho>
+  <Alto/>
+ </Led>
+</pcbWidgets>
