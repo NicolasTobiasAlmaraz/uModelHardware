@@ -472,8 +472,8 @@
      <property name="title">
       <string>Nuevo</string>
      </property>
-     <addaction name="actionNuevoProyectoUMH"/>
      <addaction name="actionNuevoPCB"/>
+     <addaction name="actionNuevo"/>
     </widget>
     <widget class="QMenu" name="menuGuardar">
      <property name="enabled">
@@ -510,6 +510,11 @@
     <addaction name="separator"/>
     <addaction name="menuGuardar"/>
     <addaction name="actionGuardar"/>
+    <addaction name="separator"/>
+    <addaction name="actionVincular_PCB"/>
+    <addaction name="actionDesvincular_PCB"/>
+    <addaction name="actionVincular_UMF"/>
+    <addaction name="actionDesvincular_UMF"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
@@ -546,6 +551,7 @@
    </attribute>
    <addaction name="actionConfigurarServidorToolbar"/>
    <addaction name="actionIniciarSimulacionToolbar"/>
+   <addaction name="actionDetener_Simulacion"/>
    <addaction name="actionGuardarUMHToolbar"/>
   </widget>
   <action name="actionNuevoProyectoUMH">
@@ -704,6 +710,58 @@
    </property>
    <property name="toolTip">
     <string>Guardar Todo</string>
+   </property>
+  </action>
+  <action name="actionDetener_Simulacion">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/images/stop-button.png</normaloff>:/images/stop-button.png</iconset>
+   </property>
+   <property name="text">
+    <string>Detener Simulacion</string>
+   </property>
+   <property name="toolTip">
+    <string>Detener Simulacion</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionVincular_PCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Vincular PCB</string>
+   </property>
+  </action>
+  <action name="actionDesvincular_PCB">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Desvincular PCB</string>
+   </property>
+  </action>
+  <action name="actionVincular_UMF">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Vincular UMF</string>
+   </property>
+  </action>
+  <action name="actionDesvincular_UMF">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Desvincular UMF</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo...</string>
    </property>
   </action>
  </widget>
